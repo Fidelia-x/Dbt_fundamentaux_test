@@ -1,3 +1,5 @@
+
+select
 with 
 
 source as (
@@ -13,8 +15,12 @@ renamed as (
         first_name,
         last_name
 
+
+    from {{ source('jaffle_shop', 'customers') }}
+
     from source
 
 )
 
 select * from renamed
+
